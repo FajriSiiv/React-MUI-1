@@ -13,8 +13,5 @@ export const theme = createTheme({
     otherColor: {
       main: "#999",
     },
-    white: {
-      main: "#fff",
-    },
   },
 });

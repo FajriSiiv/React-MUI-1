@@ -58,17 +58,17 @@ const Navbar = () => {
         </SearchBar>
         <IconContainer>
           <Badge badgeContent={4} color="error">
-            <Mail color="white" />
+            <Mail sx={{ color: "white" }} />
           </Badge>
           <Badge badgeContent={4} color="error">
-            <Notifications color="white" />
+            <Notifications sx={{ color: "white" }} />
           </Badge>
           <Avatar
             sx={{ width: 30, height: 30 }}
             onClick={(e) => setOpen(true)}
           />
         </IconContainer>
-        <UserBox onClick={(e) => setOpen(true)}>
+        <UserBox onClick={(e: any) => setOpen(true)}>
           <Avatar sx={{ width: 30, height: 30 }} />
           <Typography>John Doe</Typography>
         </UserBox>

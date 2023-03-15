@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
 import {
-  Button,
   Box,
-  Container,
   Stack,
   createTheme,
   ThemeProvider,
+  PaletteOptions,
 } from "@mui/material";
 import { useState } from "react";
 import Add from "./components/Add";
@@ -17,10 +16,12 @@ import Sidebar from "./components/Sidebar";
 function App() {
   const [modes, setModes] = useState("dark");
 
+  const paletteOptions: PaletteOptions = {
+    mode: "dark",
+  };
+
   const darkTheme = createTheme({
-    palette: {
-      mode: modes,
-    },
+    palette: paletteOptions,
   });
 
   return (

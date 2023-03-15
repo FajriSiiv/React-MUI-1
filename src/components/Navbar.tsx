@@ -4,6 +4,7 @@ import {
   Avatar,
   Badge,
   Box,
+  IconButton,
   InputBase,
   Menu,
   MenuItem,
@@ -43,16 +44,15 @@ const UserBox = styled(Box)(({ theme }: any) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ onDrawer }: { onDrawer: () => void }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{ boxShadow: "none" }}>
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          Siiv
-        </Typography>
-        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+        <IconButton onClick={onDrawer}>
+          <Pets sx={{ display: "block" }} />
+        </IconButton>
         <SearchBar>
           <InputBase placeholder="Search..." />
         </SearchBar>

@@ -11,6 +11,7 @@ import { useState } from "react";
 import Add from "./components/Add";
 import Feed from "./components/Feed";
 import Navbar from "./components/Navbar";
+import NavbarNew from "./components/NavbarNew";
 import RightBar from "./components/RightBar";
 import Sidebar from "./components/Sidebar";
 
@@ -28,13 +29,14 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar />
-        <Stack direction="row" justifyContent="space-between">
-          <Sidebar setMode={setModes} mode={modes} />
-          <Feed />
-          <RightBar />
-        </Stack>
-        <Add />
+        {/* <Navbar /> */}
+        <NavbarNew setModes={setModes} modes={modes}>
+          <Stack direction="row" justifyContent="space-between">
+            <Feed />
+            <RightBar />
+          </Stack>
+          <Add />
+        </NavbarNew>
       </Box>
     </ThemeProvider>
   );

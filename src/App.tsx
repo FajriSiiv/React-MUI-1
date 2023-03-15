@@ -5,6 +5,7 @@ import {
   createTheme,
   ThemeProvider,
   PaletteOptions,
+  PaletteMode,
 } from "@mui/material";
 import { useState } from "react";
 import Add from "./components/Add";
@@ -14,10 +15,10 @@ import RightBar from "./components/RightBar";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [modes, setModes] = useState("dark");
+  const [modes, setModes] = useState<PaletteMode>("dark");
 
   const paletteOptions: PaletteOptions = {
-    mode: "dark",
+    mode: modes,
   };
 
   const darkTheme = createTheme({
